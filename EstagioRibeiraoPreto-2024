@@ -1,0 +1,52 @@
+
+# Questão 1 ------------------------------------------------------------------------------------------
+print("1) Observe o trecho de código abaixo:\n\nint INDICE = 13, SOMA = 0, K = 0;\n\nenquanto K < INDICE faça\n\n{\n\nK = K + 1;\n\nSOMA = SOMA + K;\n\n}\n\nimprimir(SOMA);\n\nAo final do processamento, qual será o valor da variável SOMA?")
+indice = 13
+soma = 0
+k = 0
+
+while k < indice:
+    k = k + 1
+    soma = soma + k
+print(f"A resposta da questão 1 é: {soma}") 
+
+# resposta 91
+
+# Questão 2 ------------------------------------------------------------------------------------------
+print("\n2) Dado a sequência de Fibonacci, onde se inicia por 0 e 1 e o próximo valor sempre será a soma dos 2 valores anteriores (exemplo: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34...), escreva um programa na linguagem que desejar onde, informado um número, ele calcule a sequência de Fibonacci e retorne uma mensagem avisando se o número informado pertence ou não a sequência.\n\nIMPORTANTE:\n\nEsse número pode ser informado através de qualquer entrada de sua preferência ou pode ser previamente definido no código;")
+print("\nO valor de entrada escolhido para a sequencia fibonacci é 7")
+valor_para_ser_comparado = 7 # valor de entrada escolhido para a sequencia fibonacci
+sequencia_fibonacci = 0
+num_anterior = 0
+num_posterior = 1
+num_fibonacci = 0
+sequencia_fibonacci_igual_numero_comparado = False
+while sequencia_fibonacci < valor_para_ser_comparado:
+    print(f"{num_anterior} , {num_posterior}")
+    num_fibonacci = num_anterior + num_posterior
+    num_anterior = num_posterior
+    num_posterior = num_fibonacci
+    sequencia_fibonacci = sequencia_fibonacci + 1
+    if valor_para_ser_comparado == num_fibonacci:
+        sequencia_fibonacci_igual_numero_comparado = True
+
+if sequencia_fibonacci_igual_numero_comparado:
+    print("O valor está na sequência de fibonacci")
+else:
+    print("O valor não está na sequência de fibonacci")
+# Questão 3
+print("\n3) Descubra a lógica e complete o próximo elemento:\n")
+print("a) 9 # números ímpares.")
+print("b) 128 # anterior vezes 2.")
+print("c) 49 # Somar o resultado com o numero ímpar da sequencia.")
+print("d) 100 # raiz quadrada dos números pares")
+print("f) 200 # Todos começam com D, então o próximo é duzentos")
+
+# Questão 4
+print("\n4) Você está em uma sala com três interruptores, cada um conectado a uma lâmpada em uma sala diferente. Você não pode ver as lâmpadas da sala em que está, mas pode ligar e desligar os interruptores quantas vezes quiser. Seu objetivo é descobrir qual interruptor controla qual lâmpada.\n\nComo você faria para descobrir, usando apenas duas idas até uma das salas das lâmpadas, qual interruptor controla cada lâmpada?")
+print("\npra ficar mais simples de resolver vamos nomear as salas como X Y Z e os interruptores A B C,\nLiga os interruptores A e B, vá até a sala Y, se estiver ligado, sabemos que  A ou B = Y, se estiver apagada, temos que C = Z\nSe C = Z basta apagar A ou B e ir a sala Y ou X, que descobrirá as 3\nSe A ou B = Y Ligamos somente A e vamos a sala X, se estiver ligada A = X B = Y e C = Z, se estiver apagada A nao X, B nao Y, então A = Y, B = X, C = Z")
+
+# Questão 5
+print("4) Você está em uma sala com três interruptores, cada um conectado a uma lâmpada em uma sala diferente. Você não pode ver as lâmpadas da sala em que está, mas pode ligar e desligar os interruptores quantas vezes quiser. Seu objetivo é descobrir qual interruptor controla qual lâmpada.\n\nComo você faria para descobrir, usando apenas duas idas até uma das salas das lâmpadas, qual interruptor controla cada lâmpada?")
+palavra_escrita = input("Qual a palavra para ficar de trás para frente:")
+print(f'A palavra Digitada de trás para frente é: {palavra_escrita[::-1]}\n')

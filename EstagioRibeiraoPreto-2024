@@ -1,4 +1,4 @@
-
+#programado em python v 3.12.2
 # Questão 1 ------------------------------------------------------------------------------------------
 print("1) Observe o trecho de código abaixo:\n\nint INDICE = 13, SOMA = 0, K = 0;\n\nenquanto K < INDICE faça\n\n{\n\nK = K + 1;\n\nSOMA = SOMA + K;\n\n}\n\nimprimir(SOMA);\n\nAo final do processamento, qual será o valor da variável SOMA?")
 indice = 13

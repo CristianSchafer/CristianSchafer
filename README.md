@@ -17,5 +17,7 @@ Obrigado por dedicar um momento do seu tempo para me conhecer melhor. Estou à d
 Atenciosamente,
 
 Cristian Schafer Pokojeski
+
 41-9-8877-2573
+
 cristian-1781@hotmail.com

@@ -1,0 +1,151 @@
+#Exercicio Teste.
+
+def SumMultiplier(arr):
+  # Pegue a matriz de numeros armazendos e retorne a cadeia de caracteres TRUE se quaisquer DOIS numeros puderem ser multiplicados para que a resposta seja maior que o dobro da somade todos os elementos na matriz. 
+  # Caso contrário retorne FALSE
+
+  # sum(arg) soma todos os valores contidos em uma váriavel.
+  # Val_total_arr armazena todos os valores já somados.
+  val_total_arr = sum(arr)
+
+  # dobro_val_total_arr recebe o dobro do valor total, para comparação.
+  dobro_val_total_arr = val_total_arr * 2
+
+  # Variavel para comparação se um valor é maior que o dobro.
+  valor_maior_total = False
+
+  # For por um len dentro de arr, para passar de um a um.
+  for i in range(len(arr)):
+    
+    # For em mais um len, para verificar um a um com o anterior.
+    for j in range(len(arr)):
+
+      # IF para verificar se a multiplicação de cada arg de arr é maior que o dobro.
+      if arr[i] * arr[j] > dobro_val_total_arr:
+
+        #IF se o valor_maior_total é verdadeiro, vai sair da função como TRUE.
+        if valor_maior_total:
+          return 'true'
+        #Else, vai tornalo TRUE, pois o IF é o valor maior sendo verdade.
+        else:
+          valor_maior_total = True  
+  # arr passa por dois loops, validando valor por valor, se algum é verdadeiro torna a variavel valor_maior_total em TRUE, se entrar novamente significa que existem dois valores maiors que o dobro da soma dos valores.
+
+  return 'false'
+
+# keep this function call here 
+print(SumMultiplier(input()))
+
+
+#===============================================================================================================
+
+
+def LongestWord(sen):
+  # Retorne a palavra mais longa na caida de caracteres, se houver duas ou mais palavras com o mesmo comprimento, retorne a primeira palavra de cada cadeia de caracteres com esse comprimento, ignore a pontuacao e assuma que sen nao estara vazio.
+  
+  # Recebe a palavra maior, para comparação salva a primeira.
+  palavra_maior = '' #Inicializa a variavel, para nao dar erro.
+
+  # recebe os caracteres para serem removidos.
+  pontuacao_para_remover = '''!{};.[]()-:'"|\,<>/?§¬¢£³²¹@#$%¨&*_~+='''
+
+  # For subistituindo cada um dos simbolos em pontuacao_para_remover da variavel sen
+  for i in pontuacao_para_remover:
+    sen = sen.replace(i, "")
+
+  # Cria um Array com cada palavra, que é separa pelo split.
+  palavras = sen.split()
+
+  # For para correr dentro do array de palavras.
+  for i in palavras:
+
+    # IF tiver alguma palavra maior que a atual, sera subistituida.
+    if len(i) > len(palavra_maior):
+      palavra_maior = i
+
+  # Retorna a plavra maior.
+  return palavra_maior
+
+# keep this function call here 
+print(LongestWord(input()))
+
+#================================================================================================
+
+def LetterCount(strParam):
+  # Faca com que a funcao LetterCount(str) pegue o parametro str que está sendo passado e retorne a primeira palavra com o maior numero de letras repetidas. Se não houver palavras repetidas deve retornar -1
+  
+  # Funcao para verificar a quantidade de repeticoes.
+  def contador_repeticoes(palavra):
+
+    # Cria um contador.
+    count = {}
+
+    # For letra por lentra dentro da palavra, se for igual soma mais um.
+    for letra in palavra:
+
+      # IF letra está em count, vai somar mais um.
+      if letra in count:
+        count[letra] += 1
+      else:
+        count[letra] = 1
+
+    #Retorna a quantidade de repeticoes que teve na palavra.
+    return max(count.values(), default=1)
+
+  # Transforma o texto em um array de palavras. 
+  palavras = strParam.split()
+
+  # Quantidade maxima de letras repetidas em uma palavra.
+  maximo_repeticoes = 0
+
+  # Palavra com mais letras repetidas.
+  palavra_com_repeticoes = -1
+
+  # For no array de palavras
+  for i in palavras:
+
+    # Chama a funcao para verificar as letras repetidas
+    repeticoes = contador_repeticoes(i)
+
+    # IF as repeticoes forem maior que o maximo atual de repeticoes, vai redefir
+    if repeticoes > maximo_repeticoes:
+
+      #Redefine o maximo de repeticoes e tambem a palavra com maior repeticoes;
+      maximo_repeticoes = repeticoes
+      palavra_com_repeticoes = i
+
+  return palavra_com_repeticoes if maximo_repeticoes > 1 else -1
+
+# keep this function call here 
+print(LetterCount(input()))
+
+
+
+# ==============================================7
+
+
+def VowelCount(strParam):
+  # Pegue o parametro STR e retorne o numero de vogais que a string contém.
+  
+  # Define a palavra para o parametro passado
+  palavra = strParam
+
+  # Define as vogais
+  vogais = "AEIOUaeiou"
+
+  # Numero de vogais
+  numero_vogais = 0
+
+  # For dentro da variavel que foi passada.
+  for i in palavra:
+
+    # IF i contem vogal.
+    if i in vogais:
+
+      # Adiciona mais um ao numero de vogais
+      numero_vogais += 1
+  
+
+  return numero_vogais
+# keep this function call here 
+print(VowelCount(input()))
